@@ -1,4 +1,3 @@
-// import Hellowrold from './components/Helloworld';
-import User from './components/21jan/User';
+import Homepage from './components/Homepage/Homepage';
 
-export default User;
+export default Homepage;

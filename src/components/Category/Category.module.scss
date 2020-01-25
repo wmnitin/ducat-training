@@ -1,0 +1,16 @@
+.ul {
+  display: flex;
+  width: 100%;
+  overflow: scroll;
+  li {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    &:hover {
+      color: red;
+    }
+  }
+}
