@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Category.module.scss';
-
+import httpFetch from '../../utils/http';
+import {config} from '../../utils/config';
 export default class Category extends React.PureComponent {
 
   state = {
@@ -9,12 +10,12 @@ export default class Category extends React.PureComponent {
   }
 
   componentDidMount() {
-    fetch('https://developers.zomato.com/api/v2.1/categories', {
+    httpFetch(config.category_api, {
       headers: {
-        "user-key": '63af153e3429d4f2cd2c4dae8aa13e64'
+        "user-key": config["user-key"]
       },
       method: 'GET'
-    }).then(response => response.json()).then(response => {
+    }).then(response => {
       this.setState({
         list: response
       })
