@@ -1,0 +1,17 @@
+.restContainer {
+  .restDetail {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px 15px 0;
+    img {
+      width: 100%;
+    }
+    span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
