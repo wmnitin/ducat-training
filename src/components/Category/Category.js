@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './Category.module.scss';
-import httpFetch from '../../utils/http';
-import {config} from '../../utils/config';
+
 export default class Category extends React.PureComponent {
 
   state = {
@@ -10,20 +9,8 @@ export default class Category extends React.PureComponent {
   }
 
   componentDidMount() {
-    httpFetch(config.category_api, {
-      headers: {
-        "user-key": config["user-key"]
-      },
-      method: 'GET'
-    }).then(response => {
-      this.setState({
-        list: response
-      })
-    }).catch(err => {
-      this.setState({
-        error: true
-      })
-    })
+    // debugger
+    // this.props.makeCategoryRequest()
   }
 
   render() {
