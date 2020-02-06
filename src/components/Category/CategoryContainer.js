@@ -4,6 +4,10 @@ import Category from './Category';
 import { makeCategoryRequest } from './actions';
 import { bindActionCreators } from 'redux';
 
+const mapStateToProps = (store) => {
+  return { list: store.categoryReducer.list }
+}
+
 const mapDispatchToProps = (dispatch, ownProps) => {
   return bindActionCreators(
     {
@@ -13,4 +17,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   );
 };
 
-export default connect(null, mapDispatchToProps)(Category)
+export default connect(mapStateToProps, mapDispatchToProps)(Category)

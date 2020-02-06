@@ -27,9 +27,9 @@ export default class Restaurants extends React.PureComponent {
       <div className={style.restContainer} >
 
         {
-          this.state.restaurantList && this.state.restaurantList.map(item => {
+          this.state.restaurantList && this.state.restaurantList.map((item,i) => {
             return (
-              <div className={style.restDetail}>
+              <div key={i} className={style.restDetail}>
                 <img src={item.restaurant.thumb} alt='' />
                 <span>{item.restaurant.name}</span>
               </div>

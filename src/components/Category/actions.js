@@ -1,5 +1,6 @@
 import httpFetch from '../../utils/http';
 import { config } from '../../utils/config';
+import { CATEGORY_FETCH } from '../../redux/actionTypes';
 
 export const makeCategoryRequest = () => {
   return (dispatch) => {
@@ -9,18 +10,12 @@ export const makeCategoryRequest = () => {
       },
       method: 'GET'
     }).then(response => {
-
       dispatch({
-        type: 'KJBSDFKJBDGJKBSDJGKB',
+        type: CATEGORY_FETCH,
         payload: response
       })
-      // this.setState({
-      //   list: response
-      // })
     }).catch(err => {
-      this.setState({
-        error: true
-      })
+      console.log('error occured', err)
     })
   }
 }

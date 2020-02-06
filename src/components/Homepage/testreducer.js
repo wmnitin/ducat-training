@@ -2,7 +2,7 @@ const myState = {
   count: 0
 }
 
-export default (state = myState, action) => {
+export default (state = myState, action) => { //pure functions
   switch (action.type) {
     case 'BUTTON_CLICKED':
       return {

@@ -1,12 +1,13 @@
+import { CATEGORY_FETCH } from "../../redux/actionTypes"
+
 const initialState = {
-  list: null,
-  name: 'nitin'
+  list: null
 }
 
 export default function (state = initialState, action) {
-  switch (action.types) {
-    case 'KJBSDFKJBDGJKBSDJGKB':
-      return{
+  switch (action.type) {
+    case CATEGORY_FETCH:
+      return {
         ...state,
         list: action.payload
       }
