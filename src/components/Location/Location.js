@@ -8,11 +8,11 @@ export default class Location extends React.PureComponent {
 
   locationChanged = (event) => {
     this.props.changeLocationValue(event.target.value)
-    this.props.makeLocationAjax(event.target.value, this.props.latitude, this.props.longitude);
+    event.target.value !== '' && this.props.makeLocationAjax(event.target.value, this.props.latitude, this.props.longitude);
   }
-  
-  listClicked = (entity_id, title) => {
-    this.props.locationSelected(entity_id, title)
+
+  listClicked = (entity_id, title, entity_type) => {
+    this.props.locationSelected(entity_id, title, entity_type)
   }
 
   componentDidMount() {
@@ -33,7 +33,7 @@ export default class Location extends React.PureComponent {
         <ul>
           {
             this.props.location_suggestions && this.props.location_suggestions.map(data => {
-              return <li onClick={this.listClicked.bind(this, data.entity_id, data.title)}>{data.title}</li>
+              return <li onClick={this.listClicked.bind(this, data.entity_id, data.title, data.entity_type)}>{data.title}</li>
             })
           }
         </ul>

@@ -1,13 +1,13 @@
 import React from 'react'
-import Homepage from './components/Homepage/HomepageContainer';
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
+import Routes from './router/Routes';
 
 export default class App extends React.PureComponent {
   render() {
     return (
       <Provider store={store}>
-        <Homepage />
+        <Routes />
       </Provider>
     )
   }

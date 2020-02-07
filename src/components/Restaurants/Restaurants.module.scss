@@ -8,10 +8,14 @@
     }
     span {
       position: absolute;
-      bottom: 0;
+      bottom: 3px;
       left: 0;
       width: 100%;
       text-align: center;
+      background: #3e2b2b99;
+      color: white;
+      font-weight: bold;
+      padding: 5px 0;
     }
   }
 }

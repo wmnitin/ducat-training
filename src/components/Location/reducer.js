@@ -6,7 +6,8 @@ const initialState = {
   longitude: null,
   location_suggestions: null,
   searchVal: '',
-  entity_id: null
+  entity_id: null,
+  entity_type: null
 }
 
 export default function (state = initialState, action) {
@@ -18,6 +19,13 @@ export default function (state = initialState, action) {
         longitude: action.payload2
       }
     case CHANGE_LACATION_INPUT:
+      if (action.payload === '') {
+        return {
+          ...state,
+          location_suggestions: null,
+          searchVal: action.payload
+        }
+      }
       return {
         ...state,
         searchVal: action.payload
@@ -33,7 +41,8 @@ export default function (state = initialState, action) {
         ...state,
         searchVal: action.payload,
         location_suggestions: null,
-        entity_id: action.payload2
+        entity_id: action.payload2,
+        entity_type: action.entity_type
       }
     default:
       return state;

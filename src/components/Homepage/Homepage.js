@@ -1,7 +1,8 @@
 import React from 'react';
 import Category from '../Category/CategoryContainer';
 import Location from '../Location/LocationContainer';
-import Restaurants from '../Restaurants/Restaurants.js';
+import Restaurants from '../Restaurants/RestaurantsContainer';
+import NavBar from '../NavBar/NavBar';
 
 // import style from './Homepage.module.scss';
 
@@ -10,7 +11,7 @@ import Restaurants from '../Restaurants/Restaurants.js';
 export default class Homepage extends React.PureComponent {
   render() {
     return <div>
-      Search<br />
+      <NavBar />
       <Category />
       <Location />
       <Restaurants />

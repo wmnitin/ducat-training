@@ -38,12 +38,13 @@ export const makeLocationAjax = (inputval, lat, long) => {
   }
 }
 
-export const locationSelected = (entityid, title) => {
+export const locationSelected = (entityid, title, entity_type) => {
   return dispatch => {
     dispatch({
       type: LOCATION_SELECTED,
       payload: title,
-      payload2: entityid
+      payload2: entityid,
+      entity_type
     })
   }
 }
